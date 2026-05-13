@@ -1,4 +1,4 @@
-﻿![C++ Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/213px-ISO_C%2B%2B_Logo.svg.png)
+﻿![C++ Logo](https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)
 
 # cplings C++❤️
 
