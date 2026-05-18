@@ -1,5 +1,5 @@
 # Standard Containers
-Here, you'll learn how to write a to reconize when standard containers may be useful.
+Here, you'll learn how to write a to recognize when standard containers may be useful.
 
 
 ## Book Sections
