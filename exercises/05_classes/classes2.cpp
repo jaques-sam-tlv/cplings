@@ -1,13 +1,10 @@
 #include <iostream>
 
 // classes2.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out.
-
-// Step 1: Make me compile!
-// Write the Circle constructor
+// Make me compile and pass the tests!
+// Fix 1: complete the Point::operator== body: fill in the missing expression for y.
+// Fix 2: initialize point_zero with {0.0, 0.0}.
+// Fix 3: implement Circle::area() using the formula pi * radius * radius.
 
 struct Point {
     double x;
@@ -18,7 +15,7 @@ struct Point {
     }
 };
 
-constexpr Point point_zero = ; 
+constexpr Point point_zero = ;
 
 class Shape {
 public:

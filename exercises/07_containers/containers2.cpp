@@ -7,11 +7,11 @@
 // We sometimes encourage you to keep trying things on shape given exercise,
 // even after you already figured it out. 
 
-// Step 1: Make me compile. Replace the array with the appropriate container.
-
+// Step 1: Make me compile. Replace the C array with a container that stores only unique values.
+// Hint: std::set or std::unordered_set automatically prevents duplicates.
 
 constexpr int num_inserts = 4;
-int my_sequence[num_inserts]; // Change this type to the appropriate STL
+int my_sequence[num_inserts]; // Fix: change this to std::set<int> or std::unordered_set<int>
 
 void test_containers2() {
 	std::cout << "There should be only one element of the same value (no duplicates) : \n";

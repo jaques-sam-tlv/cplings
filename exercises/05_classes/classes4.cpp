@@ -3,13 +3,11 @@
 #include <vector>
 
 // classes4.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out. 
-
-// Step 1: Make me compile!
-// Write the Circle constructor
+// Make me compile and pass the tests!
+// This exercise is about virtual dispatch, not the constructor.
+// Fix: virtual functions are only dispatched polymorphically through pointers or references.
+//      - push_back takes Shape*, so pass &circle (address), not circle (value).
+//      - shape_collection holds Shape*, so use -> (arrow) to call member functions.
 
 struct Point {
     static const double epsilon;

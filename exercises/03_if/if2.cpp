@@ -2,23 +2,19 @@
 #include <string>
 
 // if2.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
-
-// Step 1: Make me compile!
-// Step 2: Get the bar_for_fuzz and default_to_baz tests passing (see expected values at bottom of the file)!
+// Make me compile and pass all tests!
+// Step 1: The function returns nothing for "fuzz": add an else if branch for it.
+// Step 2: Add a default return for any other input.
 
 
 std::string fizz_if_foo(std::string fizzish) {
     if (fizzish == "fizz") {
         return "foo";
     }
-    // Fix: Make new "else if" and "else" cases to pass the test
+    // Fix: add an 'else if' case for "fuzz" returning "bar", and a default return ""
 
 
-    
+
 }
 
 
@@ -31,4 +27,8 @@ TEST_CASE("foo_for_fizz") {
 
 TEST_CASE("bar_for_fuzz") {
     REQUIRE(fizz_if_foo("fuzz") == "bar");
+}
+
+TEST_CASE("default") {
+    REQUIRE(fizz_if_foo("other") == "");
 }

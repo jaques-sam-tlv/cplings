@@ -1,11 +1,8 @@
 #include <iostream>
 
 // functions2.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
-
+// Make me compile!
+// Fix: the parameter 'x' is missing its type. Add the correct type declaration.
 
 void callme(x) {
 	for (int i = 0; i < x; i++) {
