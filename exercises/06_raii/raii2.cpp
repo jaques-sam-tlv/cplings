@@ -21,11 +21,11 @@ public:
     };
     ExpensiveResource(std::string n = "") : name(n) {
         resources. ...;   // Fix: perform an operation on resources
-        std::cout << "Opening Ressource " << n << ", new count is:"<< resources.size() << "\n";
+        std::cout << "Opening Resource " << n << ", new count is:"<< resources.size() << "\n";
     }
     ~ExpensiveResource() {
         resources. ...;   // Fix: perform an operation on resources
-        std::cout << "Closing Ressource " << name << ", new count is:" << resources.size() << "\n";
+        std::cout << "Closing Resource " << name << ", new count is:" << resources.size() << "\n";
     }
 };
 std::unordered_set<std::string> ExpensiveResource::resources;
@@ -55,7 +55,7 @@ void test_raii1() {
 
 TEST_CASE("test_raii1") {
     test_raii1();
-    std::cout << "To avoid leaks the final number of ressources should be 0 \n";
-    std::cout << "The actual number of ressources " << ExpensiveResource::getResourceCount() << "\n";
+    std::cout << "To avoid leaks the final number of resources should be 0 \n";
+    std::cout << "The actual number of resources " << ExpensiveResource::getResourceCount() << "\n";
     REQUIRE(ExpensiveResource::getResourceCount() == 0);
 }
