@@ -8,7 +8,7 @@
 // even after you already figured it out.
 
 // Step 1: Make me compile. Make the classes Animal and Cat as template classes.
-// function so that it could support generic inputs (vectors of both int and deque of double) 
+// function so that it could support generic inputs (vectors of both int and deque of double)
 // Use two generic types to accept both deque and vector.
 // Use the keyword auto for the generic int returned by the function max
 
@@ -21,7 +21,7 @@ public:
     auto age() const { return age_; };
 };
 
-template<typename ?> 
+template<typename ?>
 class Cat : public Animal<?> {
 public:
     Cat(int years) : Animal<?>(years) {};
@@ -33,7 +33,7 @@ constexpr double ONE_YEAR_AND_HALF = 1.5;
 std::pair<double, int>  test_templates4() {
     Cat blue(INTEGER_FOUR_YEARS);
     Cat sylvester(ONE_YEAR_AND_HALF);
-    
+
     return { sylvester.age(), blue.age() };
 }
 

@@ -4,7 +4,7 @@
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 // This example showcases the use of a constexpr (computable at compile time)
 constexpr int double_var(const int x){
