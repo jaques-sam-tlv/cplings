@@ -46,12 +46,11 @@ const std::string convert_title_to_lower_case(std::shared_ptr<MediaPlayer> p, in
 }
 
 void make_upper_0_lower_1(MediaPlayer &p) {
-    auto shared0 = std::shared_ptr<MediaPlayer>(&p);
-    std::string s0_upper = convert_title_to_upper_case(shared0, 0);
+    auto shared = std::shared_ptr<MediaPlayer>(&p, [](MediaPlayer*){});
+    std::string s0_upper = convert_title_to_upper_case(shared, 0);
     std::cout << s0_upper << "\n";
 
-    auto shared1 = std::shared_ptr<MediaPlayer>(&p);
-    std::string s1_lower = convert_title_to_lower_case(shared1, 1);
+    std::string s1_lower = convert_title_to_lower_case(shared, 1);
     std::cout << s1_lower << "\n";
 }
 

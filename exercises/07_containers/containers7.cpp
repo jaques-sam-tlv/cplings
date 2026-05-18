@@ -17,7 +17,7 @@
 // Step 1: Use std::ranges::iota to fill a vector with values 1, 2, ..., n.
 std::vector<int> makeRange(int n) {
     std::vector<int> result(static_cast<std::size_t>(n));
-    std::ranges::iota(result, ?); // Fix: what start value gives 1, 2, ..., n?
+    std::ranges::iota(result, 1); // Fix: what start value gives 1, 2, ..., n?
     return result;
 }
 
@@ -26,7 +26,7 @@ std::vector<int> makeRange(int n) {
 // Hint: use std::plus<>{} as the binary operation, and cast the sum to double before dividing.
 std::optional<double> average(const std::vector<int>& numbers) {
     if (numbers.empty()) return std::nullopt;
-    auto sum = std::ranges::fold_left(numbers, ?, ?); // Fix: initial value and binary op
+    auto sum = std::ranges::fold_left(numbers, 0, std::plus<>{}); // Fix: initial value and binary op
     return static_cast<double>(sum) / static_cast<double>(numbers.size());
 }
 

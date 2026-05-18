@@ -17,15 +17,15 @@
 using Token = std::variant<int, std::string, double>;
 
 int asInt(const Token& v) {
-    return std::get<?>(v);              // Fix: which type holds an int?
+    return std::get<int>(v);
 }
 
 std::string asString(const Token& v) {
-    return std::get<?>(v);              // Fix: which type holds the string?
+    return std::get<std::string>(v);
 }
 
 bool holdsDouble(const Token& v) {
-    return std::holds_alternative<?>(v); // Fix: check for double
+    return std::holds_alternative<double>(v);
 }
 
 

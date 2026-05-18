@@ -18,9 +18,9 @@ std::vector<std::unique_ptr<int>> buildNumbers() {
     auto b = std::make_unique<int>(20);
     auto c = std::make_unique<int>(30);
 
-    numbers.push_back(a);  // Fix: cannot copy unique_ptr, use std::move(a)
-    numbers.push_back(b);  // Fix: use std::move(b)
-    numbers.push_back(c);  // Fix: use std::move(c)
+    numbers.push_back(std::move(a));
+    numbers.push_back(std::move(b));
+    numbers.push_back(std::move(c));
 
     return numbers;
 }

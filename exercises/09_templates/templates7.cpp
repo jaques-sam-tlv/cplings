@@ -28,7 +28,7 @@ struct is_pointer<T*> : true_type {};
 // the dereferenced pointer or the value if it's not a pointer
 template<typename C>
 void show(C data) {
-    if constexpr ( ...? /* Fix: check if C is a pointer type using is_pointer<C>::value */) {
+    if constexpr (is_pointer<C>::value) {
         std::cout << *data << "\n";
     }
     else {

@@ -17,7 +17,7 @@
 template <typename T, std::size_t N>
     requires (N != 0 && N % 2 != 0)
 T& medianOfSorted(std::span<T, N> s) {
-    return ?;
+    return s[N / 2];
 }
 
 // Step 2: Implement medianOfSorted() for an EVEN number of elements.
@@ -26,7 +26,7 @@ T& medianOfSorted(std::span<T, N> s) {
 template <typename T, std::size_t N>
     requires (N != 0 && N % 2 == 0)
 T medianOfSorted(std::span<T, N> s) {
-    return ?;
+    return (s[N / 2 - 1] + s[N / 2]) / 2;
 }
 
 

@@ -12,20 +12,20 @@
 // Step 1: Use std::ranges::count_if with a lambda to count even numbers.
 // A number n is even when n % 2 == 0.
 std::ptrdiff_t countEvens(const std::vector<int>& numbers) {
-    return std::ranges::count_if(numbers, ?);
+    return std::ranges::count_if(numbers, [](int n) { return n % 2 == 0; });
 }
 
 // Step 2: Use std::ranges::find_if with a lambda to find the first word longer than 4 characters.
 // Return the word, or an empty string if none is found.
 std::string findFirstLongWord(const std::vector<std::string>& words) {
-    auto it = std::ranges::find_if(words, ?);
+    auto it = std::ranges::find_if(words, [](const std::string& w) { return w.size() > 4; });
     return it != words.end() ? *it : "";
 }
 
 // Step 3: Use std::erase_if to remove all negative numbers in a single call.
 // std::erase_if(container, pred) removes every element for which pred returns true.
 std::vector<int> removeNegatives(std::vector<int> numbers) {
-    std::erase_if(numbers, ?);
+    std::erase_if(numbers, [](int n) { return n < 0; });
     return numbers;
 }
 

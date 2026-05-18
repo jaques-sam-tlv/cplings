@@ -13,10 +13,12 @@
 // function so that it could support generic inputs (vectors of both int and double)
 // Use a template parameter for the generic T returned by the function max
 
-int max(const std::vector<int>& vec) {
+
+template<typename T>
+T max(const std::vector<T>& vec) {
     assert(!vec.empty());
 
-    int max_val = vec[0];
+    T max_val = vec[0];
     for (const auto& v : vec) {
         if (v > max_val) {
             max_val = v;

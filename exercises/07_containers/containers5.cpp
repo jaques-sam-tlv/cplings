@@ -19,7 +19,7 @@ std::map<char, std::vector<std::string>> groupByFirstLetter(const std::vector<st
 
     for (const auto& word : words) {
         // Fix: insert word into groups under the key of its first character
-        ?
+        groups[word[0]].push_back(word);
     }
 
     return groups;

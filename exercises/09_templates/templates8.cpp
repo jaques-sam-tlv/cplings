@@ -18,12 +18,12 @@
 // Hint: requires(const T& t) { std::cout << t; }
 
 template <typename T>
-concept Printable = ?;
+concept Printable = requires(const T& t) { std::cout << t; };
 
 // Step 2: Constrain the print() function template to only accept Printable types.
 // Replace 'typename T' with 'Printable T' in the template parameter list.
 
-template <typename T>
+template <Printable T>
 void print(const T& value) {
     std::cout << value << "\n";
 }

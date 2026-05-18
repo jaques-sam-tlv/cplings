@@ -7,7 +7,7 @@
 // Note: x is const and cannot be modified: return a new computed value.
 
 constexpr int double_var(const int x){
-  return x;
+  return x * 2;
 }
 
 int double_value_function(int x) {

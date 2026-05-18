@@ -21,7 +21,7 @@ class Bird : public Animal{
 public:
     Bird() { // Bird constructor
         // Fix: set number_legs to the correct value for a bird
-        number_legs = ;
+        number_legs = 2;
     }
     int get_number_legs() {
         return this->number_legs;

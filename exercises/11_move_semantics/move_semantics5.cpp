@@ -31,17 +31,37 @@ public:
 
     ~StringBuffer() { delete[] buf_; }
 
-    // Fix: add copy constructor
-    // StringBuffer(const StringBuffer& other) : ...
+    StringBuffer(const StringBuffer& other)
+        : buf_(new char[other.len_ + 1]), len_(other.len_) {
+        std::copy(other.buf_, other.buf_ + len_ + 1, buf_);
+    }
 
-    // Fix: add copy assignment operator
-    // StringBuffer& operator=(const StringBuffer& other) { ... }
+    StringBuffer& operator=(const StringBuffer& other) {
+        if (this != &other) {
+            delete[] buf_;
+            len_ = other.len_;
+            buf_ = new char[len_ + 1];
+            std::copy(other.buf_, other.buf_ + len_ + 1, buf_);
+        }
+        return *this;
+    }
 
-    // Fix: add move constructor
-    // StringBuffer(StringBuffer&& other) noexcept : ...
+    StringBuffer(StringBuffer&& other) noexcept
+        : buf_(other.buf_), len_(other.len_) {
+        other.buf_ = nullptr;
+        other.len_ = 0;
+    }
 
-    // Fix: add move assignment operator
-    // StringBuffer& operator=(StringBuffer&& other) noexcept { ... }
+    StringBuffer& operator=(StringBuffer&& other) noexcept {
+        if (this != &other) {
+            delete[] buf_;
+            buf_ = other.buf_;
+            len_ = other.len_;
+            other.buf_ = nullptr;
+            other.len_ = 0;
+        }
+        return *this;
+    }
 
     std::size_t size() const { return len_; }
     const char* c_str() const { return buf_; }

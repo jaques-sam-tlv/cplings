@@ -31,7 +31,7 @@ std::ostream& operator<< (std::ostream& out, const std::vector<T>& collection) {
 }
 
 
-void fill_vec(std::vector<int> vec) {
+void fill_vec(std::vector<int>& vec) {
     vec.push_back(22);
     vec.push_back(44);
     vec.push_back(66);

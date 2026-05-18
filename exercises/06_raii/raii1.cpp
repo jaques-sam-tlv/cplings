@@ -38,7 +38,9 @@ public:
         resource = new ExpensiveResource(n);
     }
     // Fix: I need a destructor that releases the resource
-    ~
+    ~Holder() {
+        delete resource;
+    }
 };
 
 

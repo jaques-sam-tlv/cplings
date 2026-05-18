@@ -14,14 +14,18 @@
 // Step 1: Sort letters case-insensitively using std::ranges::sort and a lambda comparator.
 // Hint: std::tolower(x) converts a char to lowercase.
 std::vector<char> sortCaseInsensitive(std::vector<char> letters) {
-    std::ranges::sort(letters, ?);
+    std::ranges::sort(letters, [](char x, char y) {
+        return std::tolower(x) < std::tolower(y);
+    });
     return letters;
 }
 
 // Step 2: Sort integers by absolute value using std::ranges::sort and a lambda comparator.
 // Hint: std::abs(x) returns the absolute value.
 std::vector<int> sortByAbsoluteValue(std::vector<int> numbers) {
-    std::ranges::sort(numbers, ?);
+    std::ranges::sort(numbers, [](int x, int y) {
+        return std::abs(x) < std::abs(y);
+    });
     return numbers;
 }
 

@@ -4,6 +4,10 @@
 // Make me compile!
 // Fix: callme() is called but never defined. Add a definition for it above function1().
 
+void callme(){
+  std::cout << "Hello World!" << std::endl;
+}
+
 int function1() {
   callme();
   return 0;

@@ -27,26 +27,25 @@
 
 
 struct Song {
-    std::string name_;
+    const char* name_;
     Song() : name_("") {};
-    Song(const std::string & name) : name_(name) {};
+    Song(const char* name) : name_(name) {};
 };
 class MediaPlayer {
     static constexpr size_t max_num_songs = 4;
     std::array<Song, max_num_songs> song_ar;
 public:
     MediaPlayer() {}
-    void set_song(std::string name, int index) {
+    void set_song(const char* name, int index) {
         song_ar[index] = Song(name);
     }
-    std::string get_song_name(int index) const {
+    const char* get_song_name(int index) const {
         return song_ar[index].name_;
     }
 };
 
-// Fix unsafe function
 const char * convert_to_C_style_string(MediaPlayer & p, int index) {
-    return p.get_song_name(index).c_str();
+    return p.get_song_name(index);
 }
 
 // The test below compares const char* with ==, which compares pointers

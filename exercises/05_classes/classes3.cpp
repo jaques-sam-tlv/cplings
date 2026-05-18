@@ -32,7 +32,7 @@ public:
 
 class Circle : public Shape {
 public:
-    Circle(const Point& centre = point_zero) { } // Fix: add a Call to parent constructor
+    using Shape::Shape;
 
     Point center() const {
         return center_;

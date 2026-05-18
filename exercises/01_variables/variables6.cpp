@@ -4,7 +4,7 @@
 // Make me compile!
 // Fix: initialize the global const variable y with the value 10.
 
-const int y = ; // y is a const global variable: accessible throughout this file.
+const int y = 10; // y is a const global variable: accessible throughout this file.
 int global_var_10_function() {
   return y;
 }

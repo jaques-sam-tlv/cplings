@@ -11,7 +11,7 @@
 
 
 constexpr int num_elements = 4;
-int my_sequence[num_elements]; // Fix change this type to the appropriate STL container
+std::array<int, num_elements> my_sequence; // Fix: change this type to the appropriate STL container
 
 void test_containers1() {
 	for (size_t i = 0; i < num_elements; i++)

@@ -30,7 +30,17 @@ struct is_string : false_type {};
 template<> // // Value is true if specializing string
 struct is_string<std::string> : true_type {};
 
-// Please follow the same pattern for checking if type is vector and pointers
+template<typename T>
+struct is_vector : false_type {};
+
+template<typename T>
+struct is_vector<std::vector<T>> : true_type {};
+
+template<typename T>
+struct is_pointer : false_type {};
+
+template<typename T>
+struct is_pointer<T*> : true_type {};
 
 
 bool test_templates6_0() {

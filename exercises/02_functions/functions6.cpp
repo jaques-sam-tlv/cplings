@@ -38,7 +38,7 @@ int my_function() {
     int value = called(10);
     std::cout << "Returned out of function called() : value=" << value << "\n";
 
-    return value +  + ; // Fix: fill in the two missing terms: the global and namespace value
+    return value + ::value + my_namespace_0::value; // Fix: fill in the two missing terms: the global and namespace value
 }
 
 #include <catch2/catch_test_macros.hpp>

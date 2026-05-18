@@ -7,17 +7,16 @@
 // Fix 2: the lambda is missing its parameter. A lambda takes the form:
 //        [captures](params) -> ReturnType { body }
 
-constexpr void is_even(int num) {
+constexpr auto is_even(int num) -> bool {
     return num % 2 == 0;
 }
 
 // A lambda function: [captures](params) -> ReturnType { body }
-auto sale_price = []() -> int {
+auto sale_price = [](int price) -> int {
     if (is_even(price))
         return price - 10;
     else
         return price - 3;
-
 };
 
 int function_syntax() {

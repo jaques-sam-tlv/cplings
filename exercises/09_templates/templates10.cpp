@@ -20,22 +20,22 @@
 // Step 1: Implement my_advance for random-access iterators — use iter + n.
 template <std::random_access_iterator Iter>
 Iter my_advance(Iter iter, std::iter_difference_t<Iter> n) {
-    return ?;
+    return iter + n;
 }
 
 // Step 2: Implement my_advance for bidirectional iterators (but NOT random-access).
 // Walk forward n steps (++iter) or backward n steps (--iter) in a loop.
 template <std::bidirectional_iterator Iter>
 Iter my_advance(Iter iter, std::iter_difference_t<Iter> n) {
-    while (n > 0) { ?; --n; }
-    while (n < 0) { ?; ++n; }
+    while (n > 0) { ++iter; --n; }
+    while (n < 0) { --iter; ++n; }
     return iter;
 }
 
 // Step 3: Implement my_advance for the base case (only forward movement supported).
 template <std::input_or_output_iterator Iter>
 Iter my_advance(Iter iter, std::iter_difference_t<Iter> n) {
-    while (n > 0) { ?; --n; }
+    while (n > 0) { ++iter; --n; }
     return iter;
 }
 

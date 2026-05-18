@@ -35,14 +35,14 @@ std::vector<int> fill_vec(std::vector<int> && vec) {
     vec.push_back(44);
     vec.push_back(66);
 
-    return   ...? vec;
+    return std::move(vec);
 }
 
 
 std::pair<std::vector<int>, std::vector<int>> test_ownership2() {
     std::vector<int> vec0 = {};
     vec0.push_back(11);
-    auto vec1 = fill_vec( ...? vec0);
+    auto vec1 = fill_vec(std::move(vec0));
     vec1.push_back(88);
 
     std::cout<< "vec0 has length "<< vec0.size() << " content "<< vec0 <<"\n";

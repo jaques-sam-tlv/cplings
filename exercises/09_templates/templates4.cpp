@@ -7,19 +7,19 @@
 // Replace each '?' with a template type parameter (e.g. T).
 // T represents the numeric type used to store the animal's age (e.g. int, double).
 
-template<typename ?>
+template<typename T>
 class Animal {
 private:
-    ? age_;
+    T age_;
 public:
-    Animal(int years) : age_(years) {};
+    Animal(T years) : age_(years) {};
     auto age() const { return age_; };
 };
 
-template<typename ?>
-class Cat : public Animal<?> {
+template<typename T>
+class Cat : public Animal<T> {
 public:
-    Cat(int years) : Animal<?>(years) {};
+    Cat(T years) : Animal<T>(years) {};
 };
 
 constexpr int    INTEGER_FOUR_YEARS = 4;

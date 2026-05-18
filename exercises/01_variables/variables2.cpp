@@ -5,7 +5,7 @@
 // Fix: x is used but never declared. Declare it using the 'auto' keyword.
 
 int type_function(int input) {
-  x = input;
+  auto x = input;
   return x;
 }
 

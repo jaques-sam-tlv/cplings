@@ -13,7 +13,7 @@
 // The lambda should increment count once for every element it is called with.
 std::size_t countElements(const std::vector<int>& numbers) {
     std::size_t count = 0;
-    std::ranges::for_each(numbers, ?);
+    std::ranges::for_each(numbers, [&count](int) { ++count; });
     return count;
 }
 
@@ -22,7 +22,10 @@ std::size_t countElements(const std::vector<int>& numbers) {
 // and also performs the actual comparison (returns x < y).
 std::size_t countSortComparisons(std::vector<int> numbers) {
     std::size_t comparisons = 0;
-    std::ranges::sort(numbers, ?);
+    std::ranges::sort(numbers, [&comparisons](int x, int y) {
+        ++comparisons;
+        return x < y;
+    });
     return comparisons;
 }
 

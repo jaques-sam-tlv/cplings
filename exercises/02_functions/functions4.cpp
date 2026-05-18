@@ -9,7 +9,7 @@ bool is_even(int num) {
     return num % 2 == 0;
 }
 
-void sale_price(int price){
+auto sale_price(int price) -> int {
     if (is_even(price)) {
         return price - 10;
     }

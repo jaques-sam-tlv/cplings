@@ -8,7 +8,8 @@ int bigger(int a, int b) {
     // Do not use:
     // - another function call
     // - additional variables
-
+    if (a > b) return a;
+    else return b;
 }
 
 

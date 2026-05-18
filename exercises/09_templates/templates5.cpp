@@ -9,15 +9,15 @@
 //   - N: the number of repetitions (a non-type template parameter, e.g. size_t)
 // Example usage: Repeater<int, 42, 5> creates a vector of five 42s.
 
-template<?, ?, ?>  // Fix: replace '?' with typename T, T V, size_t N
+template<typename T, T V, size_t N>
 class Repeater {
 private:
-    std::vector<?> v;
+    std::vector<T> v;
 public:
     Repeater() {
-        for (size_t i = 0; i < ?; i++)
+        for (size_t i = 0; i < N; i++)
         {
-            v.push_back(?);
+            v.push_back(V);
         }
     };
     const auto get() const {

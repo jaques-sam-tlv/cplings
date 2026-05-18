@@ -5,7 +5,7 @@
 // Fix: initialize the const local variable y with the value 10.
 
 int output_10_function() {
-  const int y = ;
+  const int y = 10;
   return y;
 }
 

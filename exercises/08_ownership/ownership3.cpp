@@ -50,7 +50,7 @@ public:
 using HolderBox = std::unique_ptr<Holder>; // Note that HolderBox is a unique_ptr to Holder
 
 void push_data(std::vector<HolderBox>& holder_list, HolderBox hold_ptr) {
-    holder_list.push_back( ...? hold_ptr);
+    holder_list.push_back(std::move(hold_ptr));
 }
 
 std::vector<HolderBox> test_ownership3() {

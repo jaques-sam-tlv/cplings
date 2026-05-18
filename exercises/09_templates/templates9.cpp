@@ -17,15 +17,14 @@
 // Hint: requires(const T x, const T y) { { T{} }; { x + y } -> std::same_as<T>; }
 
 template <typename T>
-concept Summable = ?;
+concept Summable = requires(const T x, const T y) { { T{} }; { x + y } -> std::same_as<T>; };
 
 // Step 2: Implement sum() constrained with Summable.
 // Accumulate all values in the vector starting from T{} (zero/empty for the type).
 template <Summable T>
 T sum(const std::vector<T>& values) {
     T result{};
-    // Fix: add each element of values to result
-    ?
+    for (const auto& v : values) result = result + v;
     return result;
 }
 

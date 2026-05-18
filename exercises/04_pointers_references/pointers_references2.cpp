@@ -6,7 +6,7 @@
 // Fix: the parameter 'value' is passed by copy, so changes don't affect the caller.
 //      Change it to a reference (int&) so the function modifies the original variable.
 
-void my_reference_content(int value, int increment) {
+void my_reference_content(int& value, int increment) {
     value += increment; // Don't change this line
 }
 

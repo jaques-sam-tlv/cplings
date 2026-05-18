@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <set>
 
 // containers2.cpp
 // Make me compile!
@@ -11,13 +12,13 @@
 // Hint: std::set or std::unordered_set automatically prevents duplicates.
 
 constexpr int num_inserts = 4;
-int my_sequence[num_inserts]; // Fix: change this to std::set<int> or std::unordered_set<int>
+std::set<int> my_sequence; // Fix: change this to std::set<int> or std::unordered_set<int>
 
 void test_containers2() {
 	std::cout << "There should be only one element of the same value (no duplicates) : \n";
 	for (size_t i = 0; i < num_inserts; i++)
 	{
-		my_sequence[i] = 42;
+		my_sequence.insert(42);
 	}
 }
 

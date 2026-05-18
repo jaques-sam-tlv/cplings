@@ -3,6 +3,7 @@
 #include <stack>
 #include <string>
 #include <vector>
+#include <ranges>
 
 // containers4.cpp
 // Make me compile and pass the tests!
@@ -22,13 +23,13 @@ std::vector<std::string> reverseWords(const std::vector<std::string>& words) {
     std::stack<std::string> word_stack;
 
     // Fix: push all words onto word_stack using std::ranges::for_each
-    std::ranges::for_each(words, ?);
+    std::ranges::for_each(words, [&word_stack](const auto& w) { word_stack.push(w); });
 
     std::vector<std::string> reversed;
     while (!word_stack.empty()) {
         // Fix: append word_stack.top() to reversed, then pop
-        ?
-        ?
+        reversed.push_back(word_stack.top());
+        word_stack.pop();
     }
 
     return reversed;

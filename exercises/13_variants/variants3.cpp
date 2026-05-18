@@ -18,12 +18,12 @@ struct Formatter {
 
     void operator()(int v)                { result = "int:" + std::to_string(v); }
     void operator()(const std::string& v) { result = "str:" + v; }
-    void operator()(float v)              { result = ?; } // Fix!
+    void operator()(float v)              { result = "flt:" + std::to_string(v); }
 };
 
 std::string format(const Number& n) {
     Formatter f;
-    std::visit(?, n); // Fix!
+    std::visit(f, n);
     return f.result;
 }
 

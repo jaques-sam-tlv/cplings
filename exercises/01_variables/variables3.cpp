@@ -6,7 +6,7 @@
 // Note: 'const int input' means input cannot be modified: compute a new value instead.
 
 int double_value_function(const int input) {
-  return input;
+  return input * 2;
 }
 
 

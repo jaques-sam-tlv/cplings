@@ -12,8 +12,12 @@ std::string fizz_if_foo(std::string fizzish) {
         return "foo";
     }
     // Fix: add an 'else if' case for "fuzz" returning "bar", and a default return ""
-
-
+    if (fizzish == "fuzz") {
+        return "bar";
+    }
+    else {
+        return "";
+    }
 
 }
 

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <ranges>
 #include <vector>
+#include <ranges>
 
 // containers6.cpp
 // Make me compile and pass the tests!
@@ -20,13 +21,13 @@
 
 // Step 1: Remove even numbers — keep where n % 2 != 0 (odd).
 void removeEvens(std::vector<int>& numbers) {
-    auto tail = std::ranges::stable_partition(numbers, ?); // Fix: predicate keeping odd numbers
+    auto tail = std::ranges::stable_partition(numbers, [](int n) { return n % 2 != 0; }); // Fix: predicate keeping odd numbers
     numbers.erase(tail.begin(), tail.end());
 }
 
 // Step 2: Remove negative numbers — match where n < 0.
 void removeNegatives(std::vector<int>& numbers) {
-    auto tail = std::ranges::remove_if(numbers, ?); // Fix: predicate matching negative numbers
+    auto tail = std::ranges::remove_if(numbers, [](int n) { return n < 0; }); // Fix: predicate matching negative numbers
     numbers.erase(tail.begin(), tail.end());
 }
 

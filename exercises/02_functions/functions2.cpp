@@ -4,7 +4,7 @@
 // Make me compile!
 // Fix: the parameter 'x' is missing its type. Add the correct type declaration.
 
-void callme(x) {
+void callme(int x) {
 	for (int i = 0; i < x; i++) {
 		std::cout << "Ring! Call number " << i + 1 << "\n";
 	}

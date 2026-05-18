@@ -20,11 +20,11 @@ public:
         return resources.size();
     };
     ExpensiveResource(std::string n = "") : name(n) {
-        resources. ...;   // Fix: perform an operation on resources
+        resources.insert(n);   // Fix: perform an operation on resources
         std::cout << "Opening Resource " << n << ", new count is:"<< resources.size() << "\n";
     }
     ~ExpensiveResource() {
-        resources. ...;   // Fix: perform an operation on resources
+        resources.erase(name);   // Fix: perform an operation on resources
         std::cout << "Closing Resource " << name << ", new count is:" << resources.size() << "\n";
     }
 };

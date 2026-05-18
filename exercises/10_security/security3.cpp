@@ -26,13 +26,11 @@ public:
         song_ar[index] = Song(name);
     }
     void add_song(std::string name, size_t index) {
-        // Fix: writing to song_ar[index] without bounds checking is a buffer overflow.
-        // Add a bounds check so that out-of-range writes are silently ignored.
-        song_ar[index] = Song(name); // unsafe, fix!
+        if (index >= max_num_songs) return;
+        song_ar[index] = Song(name);
     }
     std::string get_song_name(int index) const {
-        // Fix: accessing song_ar[index] without bounds checking is undefined behaviour.
-        // Return "" for any index outside [0, max_num_songs).
+        if (index < 0 || static_cast<size_t>(index) >= max_num_songs) return "";
         return song_ar[index].name_;
     }
 };

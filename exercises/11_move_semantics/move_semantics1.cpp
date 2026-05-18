@@ -35,7 +35,7 @@ public:
 
     // Fix: implement the move constructor
     // It should transfer data_ and size_ from other, then set other.data_ = nullptr, other.size_ = 0
-    Buffer(Buffer&& other) noexcept : data_(?), size_(?) {
+    Buffer(Buffer&& other) noexcept : data_(other.data_), size_(other.size_) {
         other.data_ = nullptr;
         other.size_ = 0;
     }
@@ -45,8 +45,8 @@ public:
     Buffer& operator=(Buffer&& other) noexcept {
         if (this != &other) {
             delete[] data_;
-            data_ = ?;
-            size_ = ?;
+            data_ = other.data_;
+            size_ = other.size_;
             other.data_ = nullptr;
             other.size_ = 0;
         }

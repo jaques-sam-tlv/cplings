@@ -49,7 +49,7 @@ public:
     }
 };
 
-using HolderBox = Holder*; // Note that HolderBox is a pointer to Holder. Modify this definition for using a unique resource
+using HolderBox = std::unique_ptr<Holder>;
 
 void push_data(std::vector<HolderBox> & holder_list, HolderBox hold_ptr) {
     holder_list.push_back(std::move(hold_ptr));
@@ -61,9 +61,8 @@ std::vector<HolderBox> test_ownership4() {
     for (size_t i = 0; i < num_elems; i++)
     {
         std::string s = "Hold#" + std::to_string(i);
-        Holder h { s };
-        // Try to pass unique ownership out of h to holder_list
-        push_data(holder_list, &h);
+        auto h = std::make_unique<Holder>(s);
+        push_data(holder_list, std::move(h));
     }
     return holder_list;
 }

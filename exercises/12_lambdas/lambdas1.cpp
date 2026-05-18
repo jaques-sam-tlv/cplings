@@ -14,8 +14,12 @@
 //   auto myLambda = [capture](parameters) { body };
 
 std::size_t countStartingWith(const std::vector<std::string>& words, char letter) {
-    // Fix: define the lambda (capturing words) and call it with letter
-    auto count = ?;
+    auto count = [&words](char c) {
+        std::size_t n = 0;
+        for (const auto& w : words)
+            if (!w.empty() && w[0] == c) ++n;
+        return n;
+    };
     return count(letter);
 }
 

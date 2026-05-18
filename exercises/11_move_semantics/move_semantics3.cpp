@@ -26,13 +26,13 @@ public:
     }
 
     // Fix: delete the copy constructor
-    Handle(const Handle&) = ?;
+    Handle(const Handle&) = delete;
 
     // Fix: delete the copy assignment operator
-    Handle& operator=(const Handle&) = ?;
+    Handle& operator=(const Handle&) = delete;
 
     // Fix: implement the move constructor — transfer handle_ and invalidate the source
-    Handle(Handle&& other) noexcept : handle_(?) {
+    Handle(Handle&& other) noexcept : handle_(other.handle_) {
         other.handle_ = -1;
     }
 
@@ -41,7 +41,7 @@ public:
         if (this != &other) {
             if (handle_ != -1)
                 std::cout << "Closed handle " << handle_ << " (replaced)\n";
-            handle_ = ?;
+            handle_ = other.handle_;
             other.handle_ = -1;
         }
         return *this;

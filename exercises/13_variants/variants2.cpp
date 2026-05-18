@@ -14,7 +14,7 @@
 using Payload = std::variant<int, std::string, double>;
 
 std::optional<int> safeGetInt(const Payload& v) {
-    if (const auto* p = std::get_if<int>(?)) { // Fix: pass the address of v
+    if (const auto* p = std::get_if<int>(&v)) {
         return *p;
     }
     return std::nullopt;
@@ -22,7 +22,7 @@ std::optional<int> safeGetInt(const Payload& v) {
 
 bool isNonEmpty(const Payload& v) {
     const auto* s = std::get_if<std::string>(&v);
-    return s != nullptr && !?->empty(); // Fix: dereference s to call .empty()
+    return s != nullptr && !s->empty();
 }
 
 

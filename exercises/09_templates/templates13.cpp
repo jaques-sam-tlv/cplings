@@ -15,7 +15,7 @@
 // Hint: requires(const T x, const T y) { x + y; x / 2; }
 
 template <typename T>
-concept Averagable = ?;
+concept Averagable = requires(const T x, const T y) { x + y; x / 2; };
 
 // Step 2: Implement median_of_sorted() for any forward range of Averagable elements.
 // - For an ODD number of elements N, return the element at position N/2.
@@ -30,14 +30,13 @@ auto median_of_sorted(Range&& range) {
 
     if (n % 2 != 0) {
         // Fix: advance it by n/2 and return the element
-        std::advance(it, ?);
+        std::advance(it, n / 2);
         return *it;
     } else {
         std::advance(it, n / 2 - 1);
         auto lo = *it++;
         auto hi = *it;
-        // Fix: return the average of lo and hi
-        return ?;
+        return (lo + hi) / 2;
     }
 }
 

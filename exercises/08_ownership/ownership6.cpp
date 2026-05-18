@@ -58,7 +58,7 @@ int fill_vec1(std::shared_ptr<std::vector<MyInteger>> vec_ptr) {
     //      name it `vec`. A second std::shared_ptr can share ownership of the
     //      same object; constructing it raises the reference count, and it is
     //      released again when fill_vec1 returns.
-    ...?
+    std::shared_ptr<std::vector<MyInteger>> vec(vec_ptr);
 
     vec->push_back(22);
     std::cout << "vec has length " << vec_ptr->size() << ", number of owners should be 3:" <<

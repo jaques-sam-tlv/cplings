@@ -14,11 +14,10 @@ std::string classify(const Mixed& v) {
     std::string result;
 
     std::visit([&result](const auto& val) {
-        // Fix: add expression that gives the type of val
-
-        if ? // Fix!
+        using T = std::decay_t<decltype(val)>;
+        if constexpr (std::is_same_v<T, int>)
             result = "integer";
-        else if ? // Fix!
+        else if constexpr (std::is_same_v<T, std::string>)
             result = "text";
         else
             result = "other";

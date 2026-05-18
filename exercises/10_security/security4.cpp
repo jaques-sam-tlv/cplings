@@ -65,7 +65,7 @@ struct Song {
             alloc_tracker[song_address_code] = num_songs*sizeof(Song);
             std::cout << "Allocated "<< std::dec << alloc_tracker[song_address_code] <<"B at " << std::hex << song_address_code<<"\n";
         }
-        catch(std::bad_alloc) { // Fix!
+        catch(const std::bad_alloc&) {
             std::cout<<"Program is probably running out of memory ..."<<"\n";
         }
         return s;

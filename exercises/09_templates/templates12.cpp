@@ -18,19 +18,19 @@
 // Hint: SizedRange = std::ranges::range<R> && std::ranges::sized_range<R>;
 
 template <typename R>
-concept SizedRange = ?;
+concept SizedRange = std::ranges::range<R> && std::ranges::sized_range<R>;
 
 // Step 2: Implement find_min() using std::ranges::min_element.
 // Dereference the returned iterator to get the value.
 template <SizedRange R>
 auto find_min(const R& range) {
-    return ?;
+    return *std::ranges::min_element(range);
 }
 
 // Step 3: Implement find_max() using std::ranges::max_element.
 template <SizedRange R>
 auto find_max(const R& range) {
-    return ?;
+    return *std::ranges::max_element(range);
 }
 
 

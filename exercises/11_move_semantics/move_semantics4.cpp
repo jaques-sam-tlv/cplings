@@ -39,16 +39,16 @@ public:
 
     // Fix: use std::exchange to implement the move constructor in the initializer list
     DynArray(DynArray&& other) noexcept
-        : data_(std::exchange(other.data_, ?))
-        , size_(std::exchange(other.size_, ?))
+        : data_(std::exchange(other.data_, nullptr))
+        , size_(std::exchange(other.size_, 0))
     {}
 
     // Fix: use std::exchange to implement the move assignment operator
     DynArray& operator=(DynArray&& other) noexcept {
         if (this != &other) {
             delete[] data_;
-            data_ = std::exchange(other.data_, ?);
-            size_ = std::exchange(other.size_, ?);
+            data_ = std::exchange(other.data_, nullptr);
+            size_ = std::exchange(other.size_, 0);
         }
         return *this;
     }

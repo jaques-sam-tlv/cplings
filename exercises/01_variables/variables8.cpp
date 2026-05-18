@@ -18,7 +18,7 @@ using namespace boost::safe_numerics;
 std::vector<std::string> words;
 
 //Hint: Use safe<> type from the safe_numerics (see more details in hint file)
-uint32_t len; // This global variable keeps track of how may words should be accessed
+safe<uint32_t> len; // This global variable keeps track of how may words should be accessed
 
 // init_words is called one before test_danger_loop
 void init_words(){
@@ -28,12 +28,13 @@ void init_words(){
 
 const std::string secret_key = "Encrypted S3cr3t!";
 
-std::string test_danger_loop(uint32_t  query_idx) { // Use safe<> type
+std::string test_danger_loop(safe<uint32_t> query_idx) { // Use safe<> type
     // Tip: if you cannot find the problem replace all uint32_t with
     // safe<uint32_t>, from the boost::safe_numerics library
     // The safe<uint32_t> will throw an exception to help you find the bug
 
     words.push_back(secret_key); // Copies a secret at the end of the vector
+    len += 1;
 
     std::string response;
     if (len - query_idx > 0) { // Bound checking for protecting secret

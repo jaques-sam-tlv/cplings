@@ -16,18 +16,15 @@
 // Step 3: Implement fire() to call every registered callback with the message.
 
 class EventSource {
-    // Fix: add a member to store callbacks
-    ?
+    std::vector<std::function<void(const std::string&)>> callbacks_;
 
 public:
     void registerCallback(std::function<void(const std::string&)> cb) {
-        // Fix: store cb
-        ?
+        callbacks_.push_back(std::move(cb));
     }
 
     void fire(const std::string& message) {
-        // Fix: invoke every stored callback with message
-        ?
+        for (auto& cb : callbacks_) cb(message);
     }
 };
 
