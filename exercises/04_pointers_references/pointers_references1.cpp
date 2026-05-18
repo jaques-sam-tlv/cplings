@@ -2,21 +2,18 @@
 #include <string>
 
 // pointers_references1.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
-
-// Step 1: Make me compile!
-// Fix the syntax mistakes to return the correct pointer values
+// Make me compile and pass the tests!
+// Fix 1: new_data should be a pointer (int*), not a plain int.
+// Fix 2: my_pointer_content must modify the VALUE pointed to, not the pointer address.
+//        Use the dereference operator (*) to write through the pointer.
 
 int* my_pointer_value_swap(int* old_data) {
-    int new_data = old_data; // Fix: new_data should be a pointer
+    int new_data = old_data; // Fix: new_data should be a pointer (int*)
     return new_data;
 }
 
-void my_pointer_content(int * const value, int increment) { // the address of pointed value is const 
-    value += increment; 
+void my_pointer_content(int * const value, int increment) { // the address of pointed value is const
+    value += increment; // Fix: this modifies the local copy of the pointer: dereference it instead
 }
 
 // Test cases

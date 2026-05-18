@@ -1,13 +1,11 @@
 #include <iostream>
 
 // variables2.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
+// Make me compile!
+// Fix: x is used but never declared. Declare it using the 'auto' keyword.
 
 int type_function(int input) {
-  x = input; 
+  x = input;
   return x;
 }
 

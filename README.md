@@ -11,7 +11,7 @@ Alternatively, for a first-time C++ learner, there are several other resources:
 - [The C++ FAQ](https://isocpp.org/wiki/faq)
 - [C++ Core guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
 
-*cplings got its inspiration from the magnificient [rustlings repository](https://github.com/rust-lang/rustlings), which aims at familiarizing newcomers to the Rust language. This repository is a sort of a fork of it but for the C++ language*
+*cplings got its inspiration from the magnificent [rustlings repository](https://github.com/rust-lang/rustlings), which aims at familiarizing newcomers to the Rust language. This repository is a sort of a fork of it but for the C++ language*
 
 
 ## Getting Started
@@ -40,8 +40,8 @@ For Fedora
 sudo apt install g++ cmake make gdb git libasan-static
 ```
 
+Clone this repository and build:
 ```bash
-# Clone this repository
 git clone https://github.com/rdjondo/cplings
 cd cplings
 mkdir build && cd build
@@ -49,10 +49,10 @@ cmake ..
 make
 ```
 
-You should expect the build to fail : your task is to fix each exercise for the build to succed.
+You should expect the build to fail : your task is to fix each exercise for the build to succeed.
 
 ## Windows
-Install Visual Studio Community Edition and Git.
+Install Visual Studio Community Edition or Code and Git.
 
 ```cmd
 # Clone this repository
@@ -60,7 +60,7 @@ git clone https://github.com/rdjondo/cplings
 
 ```
 
-Open the folder cplings in Visual Studio. Add support for CMake and run a build. You should expect the build to fail : your task is to fix each exercise for the build to succed.
+Open the folder cplings in Visual Studio. Add support for CMake and run a build. You should expect the build to fail : your task is to fix each exercise for the build to succeed.
 
 
 ## Doing the exercises

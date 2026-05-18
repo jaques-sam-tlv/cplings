@@ -1,10 +1,9 @@
 #include <iostream>
 
 // functions4.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
+// Make me compile!
+// Fix: sale_price has the wrong return type and is missing trailing return type syntax.
+// It should return an int using the trailing return type: auto sale_price(int price) -> int
 
 bool is_even(int num) {
     return num % 2 == 0;

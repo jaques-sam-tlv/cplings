@@ -5,13 +5,10 @@
 #include <memory>
 
 // ownership4.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out. 
-
-// Step 1: Make me compile. Replace the array with the appropriate container.
-// The code structure is similar to exercise raii2.cpp
+// Make me compile and pass the tests!
+// Fix: the HolderBox alias uses a raw pointer (Holder*) which has no ownership semantics.
+//      Replace it with std::unique_ptr<Holder> to express that each box owns exactly one Holder.
+//      Also update push_data and test_ownership4 accordingly (use std::make_unique).
 
 class ExpensiveResource {
 private:
@@ -27,11 +24,11 @@ public:
     }
     ExpensiveResource(std::string n = "") : name(n) {
         resources.insert(this);
-        std::cout << "Opening Ressource " << n << ", new count is:" << resources.size() << "\n";
+        std::cout << "Opening Resource " << n << ", new count is:" << resources.size() << "\n";
     }
     ~ExpensiveResource() {
         resources.erase(this);
-        std::cout << "Closing Ressource " << name << ", new count is:" << resources.size() << "\n";
+        std::cout << "Closing Resource " << name << ", new count is:" << resources.size() << "\n";
     }
 };
 std::unordered_set<ExpensiveResource *> ExpensiveResource::resources;
@@ -77,8 +74,8 @@ std::vector<HolderBox> test_ownership4() {
 TEST_CASE("test_ownership4_0") {
     std::vector<HolderBox> v = test_ownership4();
     std::cout << "\ntest_ownership1\n";
-    std::cout << "The actual number of ressources " << ExpensiveResource::getResourceCount() << "\n";
-    std::cout << "The actual number of ressources owned " << v.size() << "\n";
+    std::cout << "The actual number of resources " << ExpensiveResource::getResourceCount() << "\n";
+    std::cout << "The actual number of resources owned " << v.size() << "\n";
 
     REQUIRE(ExpensiveResource::getResourceCount() == 3);
     REQUIRE(ExpensiveResource::getResourceCount() == v.size());
@@ -89,7 +86,7 @@ TEST_CASE("test_ownership4_0") {
 
 TEST_CASE("test_ownership4_1") {
     std::cout << "\ntest_ownership2\n";
-    std::cout << "To avoid leaks the final number of ressources should be 0 \n";
-    std::cout << "The actual number of ressources " << ExpensiveResource::getResourceCount() << "\n";
+    std::cout << "To avoid leaks the final number of resources should be 0 \n";
+    std::cout << "The actual number of resources " << ExpensiveResource::getResourceCount() << "\n";
     REQUIRE(ExpensiveResource::getResourceCount() == 0);
 }

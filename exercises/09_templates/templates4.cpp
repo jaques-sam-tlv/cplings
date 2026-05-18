@@ -2,17 +2,12 @@
 #include <vector>
 
 // templates4.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
+// Make me compile!
+// Step 1: Make me compile. Make Animal and Cat template classes.
+// Replace each '?' with a template type parameter (e.g. T).
+// T represents the numeric type used to store the animal's age (e.g. int, double).
 
-// We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out.
-
-// Step 1: Make me compile. Make the classes Animal and Cat as template classes.
-// function so that it could support generic inputs (vectors of both int and deque of double)
-// Use two generic types to accept both deque and vector.
-// Use the keyword auto for the generic int returned by the function max
-
-template<typename ?>  // TODO : delete all references to typename and replace all int with int
+template<typename ?>
 class Animal {
 private:
     ? age_;

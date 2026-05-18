@@ -3,15 +3,10 @@
 #include <string>
 
 // templates7.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out.
-
-// Step 1: Make me compile. Make the class Repeater a template class.
-// function so that it could support generic inputs (vectors of both int and deque of double) 
-// Use two generic types to accept both deque and vector.
-// Use the keyword auto for the generic T returned by the function max
+// Make me compile!
+// Step 1: Complete the show() function.
+// Replace '...?' with the compile-time condition that checks whether C is a pointer.
+// Hint: use is_pointer<C>::value inside the if constexpr condition.
 
 
 template<typename C, C v> // Value holder
@@ -33,8 +28,7 @@ struct is_pointer<T*> : true_type {};
 // the dereferenced pointer or the value if it's not a pointer
 template<typename C>
 void show(C data) {
-    // TODO : Delete test and content of if condition
-    if constexpr ( ...? /* check if the type is a pointer */) {
+    if constexpr ( ...? /* Fix: check if C is a pointer type using is_pointer<C>::value */) {
         std::cout << *data << "\n";
     }
     else {
@@ -55,7 +49,7 @@ void test_templates7_1() {
 
 #include <catch2/catch.hpp>
 
-TEST_CASE("test_template6") {
+TEST_CASE("test_template7") {
     test_templates7_0();
     test_templates7_1();
 }

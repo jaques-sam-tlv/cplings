@@ -1,13 +1,11 @@
 #include <iostream>
 
 // variables3.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
+// Make me pass the tests!
+// Fix: the function should return double the input value.
+// Note: 'const int input' means input cannot be modified: compute a new value instead.
 
 int double_value_function(const int input) {
-  // Solution fix the next line variable : note input cannot be modified
   return input;
 }
 
