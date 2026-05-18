@@ -9,10 +9,10 @@
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 // Try to find the constant values matching the expected results.
-// This exercises showcases integer overflows. This occurs when the 
+// This exercises showcases integer overflows. This occurs when the
 // selected datatype is not large enough to hold the value.
 // See https://www.learncpp.com/cpp-tutorial/fixed-width-integers-and-size-t/
 // See: https://www.learncpp.com/cpp-tutorial/unsigned-integers-and-why-to-avoid-them/
@@ -59,7 +59,7 @@ TEST_CASE("integer_signedness") {
         std::cout << "Next index to query " << i << ", this is word: " << words[i] << "\n";
         REQUIRE(test_danger_loop(i) == expected_words.at(i));
     }
-    
-    std::cout << "Next index to query is dangerous :" << 4 << ", this is word:" << words[4] << "\n";
+
+    std::cout << "Next index to query is dangerous : " << 4 << ", this is word: " << words[4] << "\n";
     REQUIRE(test_danger_loop(len + 1) == "");
 }
