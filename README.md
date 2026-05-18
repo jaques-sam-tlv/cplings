@@ -23,17 +23,21 @@ Install and Usage Demo video:
 [![Install and Usage Demo](https://img.youtube.com/vi/18vNfxwU5n4/0.jpg)](https://youtu.be/18vNfxwU5n4)
 
 ## Windows
-Visit https://visualstudio.microsoft.com/vs/community/ and download Visual Studio Community. 
+Visit https://visualstudio.microsoft.com/vs/community/ and download Visual Studio Community.
 When, installing it make sure to select Desktop development with C++ and then, in the "Installation details" menu enable support for the C++ CMake Tools for Windows
 
 ## Linux
 
-Under Ubuntu, just run:
+For Ubuntu:
 
-```bash
-# Install the GNU C++ compiler, git and vscode
-sudo apt install g++ cmake make gdb git
-sudo snap install vscode
+```sh
+sudo apt install g++ cmake make gdb git libasan8
+```
+
+For Fedora
+
+```sh
+sudo apt install g++ cmake make gdb git libasan-static
 ```
 
 ```bash
@@ -81,7 +85,7 @@ make variable2
 ```
 
 ### In Windows
-Visual Studio will let you choose the specific exercise you would like to solve. 
+Visual Studio will let you choose the specific exercise you would like to solve.
 
 ## Hints
 You will find some help for specific exercises in the hints directory. Please note that this is work in progress.
