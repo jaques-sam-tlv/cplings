@@ -1,20 +1,19 @@
 cmake_minimum_required(VERSION 3.15)
 
+# set the project name
+project(cplings
+    VERSION 0.01
+    DESCRIPTION "Small exercises to get you used to reading and writing C++ code! Inspired by Rustlings"
+    )
+
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Set default compile flags for GCC
+# Set default compile flags for GCC/Clang
 if ((CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR (CMAKE_CXX_COMPILER_ID STREQUAL "GNU") )
-  # using Clang
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -fsanitize=address -pedantic -Wall -Wextra -Werror")
 endif()
-
-# set the project name
-project(cplings 
-    VERSION 0.01
-    DESCRIPTION "Small exercises to get you used to reading and writing C++ code! Inspired by Rustlings"
-    )
 
 
 ##############################################
@@ -34,7 +33,7 @@ CPMAddPackage("gh:catchorg/Catch2@2.13.5")
 # Including packages for safe_numerics
 CPMAddPackage(NAME safe_numerics
   GIT_REPOSITORY https://github.com/boostorg/safe_numerics.git
-  GIT_TAG boost-1.75.0 
+  GIT_TAG boost-1.75.0
   GIT_SHALLOW TRUE
   DOWNLOAD_ONLY YES)
 CPMAddPackage("gh:boostorg/core#boost-1.75.0")
