@@ -5,13 +5,11 @@
 set(FUNCTIONS_EXERCISES_PATH ".")
 set(UNIT_TESTING_LIBRARY Catch2)
 set(EXERCISES
-  containers1
-  containers2
-  containers3
-  containers4
-  containers5
-  containers6
-  containers7
+  lambdas1
+  lambdas2
+  lambdas3
+  lambdas4
+  lambdas5
 )
 
 foreach(_exercise ${EXERCISES})

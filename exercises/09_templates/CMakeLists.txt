@@ -12,6 +12,12 @@ set(EXERCISES
   templates5
   templates6
   templates7
+  templates8
+  templates9
+  templates10
+  templates11
+  templates12
+  templates13
 )
 
 foreach(_exercise ${EXERCISES})
