@@ -1,13 +1,10 @@
 #include <iostream>
 
 // classes1.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
-
-// Step 1: Make me compile!
-// Write the constructor so that legs and fur have the right values for Cat and Bird
+// Make me compile and pass the tests!
+// Fix 1 (Bird): set number_legs to the correct value in the Bird constructor.
+// Fix 2 (Cat): remove the redundant 'bool has_fur = true;' class member: it shadows
+//              the inherited Animal::has_fur and should be set in the constructor only.
 
 class Animal {
 protected:
@@ -23,7 +20,7 @@ public:
 class Bird : public Animal{
 public:
     Bird() { // Bird constructor
-        // Fix:  Please redefine here the class variables inherited from the Animal class
+        // Fix: set number_legs to the correct value for a bird
         number_legs = ;
     }
     int get_number_legs() {
@@ -34,11 +31,10 @@ public:
 class Cat : public Animal {
 public:
     Cat() {  // Cat constructor
-        // TODO: Delete next 2 variables. Please define the class variables inherited from the Animal class
         number_legs = 4;
         has_fur = true;
     }
-    bool has_fur = true;
+    bool has_fur = true; // Fix: remove this line: it shadows Animal::has_fur
     int get_number_legs() {
         return this->number_legs;
     }

@@ -6,16 +6,12 @@
 #include <boost/safe_numerics/safe_integer.hpp>
 
 // variables8.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
-
-// Try to find the constant values matching the expected results.
-// This exercises showcases integer overflows. This occurs when the
-// selected datatype is not large enough to hold the value.
-// See https://www.learncpp.com/cpp-tutorial/fixed-width-integers-and-size-t/
-// See: https://www.learncpp.com/cpp-tutorial/unsigned-integers-and-why-to-avoid-them/
+// Make me pass the tests!
+// The test_danger_loop function has an integer underflow bug in its bounds check.
+// Fix: replace uint32_t with safe<uint32_t> (from boost::safe_numerics) for both
+// 'len' and the function parameter, so the underflow throws an exception instead of
+// silently leaking the secret_key.
+// See https://www.learncpp.com/cpp-tutorial/unsigned-integers-and-why-to-avoid-them/
 
 using namespace boost::safe_numerics;
 

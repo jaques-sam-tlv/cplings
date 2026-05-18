@@ -1,13 +1,10 @@
 #include <iostream>
 
 // functions3.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
+// Make me compile!
+// Fix: callme() requires an argument: pass the correct value to it.
 
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
-
-
-void callme(int x) { 
+void callme(int x) {
 	for (int i = 0; i < x; i++) {
 		std::cout << "Ring! Call number " << i + 1 << "\n";
 	}

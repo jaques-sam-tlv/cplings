@@ -37,8 +37,8 @@ int my_function() {
 
     int value = called(10);
     std::cout << "Returned out of function called() : value=" << value << "\n";
-    
-    return value +  + ; // Fix: must return the sum of global scope and output of called() and value of namespace my_namespace_0
+
+    return value +  + ; // Fix: fill in the two missing terms: the global and namespace value
 }
 
 #include <catch2/catch.hpp>

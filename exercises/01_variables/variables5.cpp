@@ -1,10 +1,8 @@
 #include <iostream>
 
 // variables5.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
+// Make me compile!
+// Fix: initialize the const local variable y with the value 10.
 
 int output_10_function() {
   const int y = ;

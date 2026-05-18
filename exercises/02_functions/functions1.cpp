@@ -1,12 +1,8 @@
 #include <iostream>
 
 // functions1.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
-
-
+// Make me compile!
+// Fix: callme() is called but never defined. Add a definition for it above function1().
 
 int function1() {
   callme();
