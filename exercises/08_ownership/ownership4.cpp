@@ -5,13 +5,10 @@
 #include <memory>
 
 // ownership4.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out. 
-
-// Step 1: Make me compile. Replace the array with the appropriate container.
-// The code structure is similar to exercise raii2.cpp
+// Make me compile and pass the tests!
+// Fix: the HolderBox alias uses a raw pointer (Holder*) which has no ownership semantics.
+//      Replace it with std::unique_ptr<Holder> to express that each box owns exactly one Holder.
+//      Also update push_data and test_ownership4 accordingly (use std::make_unique).
 
 class ExpensiveResource {
 private:

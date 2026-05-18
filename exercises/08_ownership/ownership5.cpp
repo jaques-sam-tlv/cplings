@@ -4,13 +4,10 @@
 #include <memory>
 
 // ownership5.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out.
-
-// Step 1: Make me compile. Let fill_vec borrow the input vector to
-// permanently modify it;
+// Make me compile and pass the tests!
+// Fix 1: fill_vec takes std::vector<int> by value: change the parameter type to
+//        std::vector<int>* so it can modify the vector through a raw pointer.
+// Fix 2: use vec.get() to obtain the raw pointer from the unique_ptr when calling fill_vec.
 
 
 // Display value for a vector

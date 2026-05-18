@@ -1,10 +1,7 @@
 #include <iostream>
 
 // if1.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
+// Make me compile and pass the tests!
 
 int bigger(int a, int b) {
     // Complete this function to return the bigger number!

@@ -1,19 +1,17 @@
 #include <iostream>
 
 // variables4.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
+// Make me pass the tests!
+// Fix: double_var should return double the value of x.
+// 'constexpr' means the compiler can evaluate this function at compile time.
+// Note: x is const and cannot be modified: return a new computed value.
 
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
-
-// This example showcases the use of a constexpr (computable at compile time)
 constexpr int double_var(const int x){
-  // Solution fix the next line variable : note input cannot be modified
   return x;
 }
 
 int double_value_function(int x) {
-  return double_var(x); 
+  return double_var(x);
 }
 
 

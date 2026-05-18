@@ -2,11 +2,11 @@
 #include <string>
 #include <unordered_set>
 
-// raii1.cpp
+// raii2.cpp
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 // Step 1: Make me compile and pass the test! Here a set is used to avoid creating more resources when the same name is used
 
@@ -35,10 +35,10 @@ private:
     ExpensiveResource * resource;
 
 public:
-    Holder(std::string n = "") { 
+    Holder(std::string n = "") {
         resource = new ExpensiveResource(n);
     }
-    ~Holder() { // TODO: Delete the destructor
+    ~Holder() { // The destructor releases the ExpensiveResource: this is the RAII pattern.
         delete resource;
     }
 };

@@ -2,13 +2,9 @@
 #include <string>
 
 // pointers_references2.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out.
-
-// Step 1: Make me compile!
-// Fix the syntax mistakes to return the correct reference values
+// Make me pass the tests!
+// Fix: the parameter 'value' is passed by copy, so changes don't affect the caller.
+//      Change it to a reference (int&) so the function modifies the original variable.
 
 void my_reference_content(int value, int increment) {
     value += increment; // Don't change this line

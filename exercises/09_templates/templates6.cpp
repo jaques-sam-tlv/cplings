@@ -3,15 +3,13 @@
 #include <string>
 
 // templates6.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out.
-
-// Step 1: Make me compile. Make the class Repeater a template class.
-// function so that it could support generic inputs (vectors of both int and deque of double) 
-// Use two generic types to accept both deque and vector.
-// Use the keyword auto for the generic T returned by the function max
+// Make me compile!
+// Step 1: Add template specializations for is_vector and is_pointer.
+// Follow the same pattern used for is_string above:
+//   - a base template that inherits false_type (matches any type)
+//   - a partial or full specialization that inherits true_type (matches the target)
+// Hint for is_vector: specialize on std::vector<T> with a template parameter T.
+// Hint for is_pointer: specialize on T* with a template parameter T.
 
 
 template<typename C, C v> // Value holder
