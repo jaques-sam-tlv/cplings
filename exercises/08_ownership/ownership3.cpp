@@ -5,11 +5,6 @@
 #include <memory>
 
 // ownership3.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out.
-
 // Step 1: Make me compile by changing only one line in the function push_data.
 // The code structure is similar to exercise raii2.cpp
 

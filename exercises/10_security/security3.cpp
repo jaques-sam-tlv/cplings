@@ -16,20 +16,21 @@ struct Song {
     Song() : name_("") {};
     Song(const std::string & name) : name_(name) {};
 };
+
 class MediaPlayer {
     static constexpr size_t max_num_songs = 4;
     std::array<Song, max_num_songs> song_ar;
 public:
     MediaPlayer() {}
-    void set_song(std::string name, int index){
+    void set_song(std::string name, int index) {
         song_ar[index] = Song(name);
     }
     void add_song(std::string name, size_t index) {
         // Fix: writing to song_ar[index] without bounds checking is a buffer overflow.
         // Add a bounds check so that out-of-range writes are silently ignored.
-        song_ar[index] = Song(name); // unsafe: index 4 is out of bounds for a 4-element array!
+        song_ar[index] = Song(name); // unsafe, fix!
     }
-    std::string get_song_name(int index) const{
+    std::string get_song_name(int index) const {
         // Fix: accessing song_ar[index] without bounds checking is undefined behaviour.
         // Return "" for any index outside [0, max_num_songs).
         return song_ar[index].name_;

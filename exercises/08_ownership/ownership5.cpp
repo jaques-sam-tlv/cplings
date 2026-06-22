@@ -8,7 +8,7 @@
 // Fix 1: fill_vec takes std::vector<int> by value: change the parameter type to
 //        std::vector<int>* so it can modify the vector through a raw pointer.
 // Fix 2: use vec.get() to obtain the raw pointer from the unique_ptr when calling fill_vec.
-
+// Fix 3: make sure RVO makes the transfer ownership of the vector to the caller.
 
 // Display value for a vector
 template<typename T>
@@ -41,7 +41,7 @@ std::unique_ptr<std::vector<int>> test_ownership5() {
     fill_vec(vec. ...?); // Fix: obtain pointer from vec
     vec->push_back(88);
 
-    return std::move(vec);
+    return std::move(vec); // Fix: do not prevent NRVO
 }
 
 #include <catch2/catch_test_macros.hpp>
