@@ -38,14 +38,13 @@ For Fedora
 
 ```sh
 sudo dnf install gcc-c++ cmake make gdb git libasan
+```
 
-```bash
-# Clone this repository
-git clone https://github.com/rdjondo/cplings
+```sh
+git clone https://github.com/jaques-sam-tlv/cplings
 cd cplings
-mkdir build && cd build
-cmake ..
-make
+cmake . -B build
+cmake --build build [--parallel 8]
 ```
 
 You should expect the build to fail : your task is to fix each exercise for the build to succeed.
@@ -53,7 +52,7 @@ You should expect the build to fail : your task is to fix each exercise for the 
 ## Windows
 Install Visual Studio Community Edition and Git.
 
-```cmd
+```sh
 # Clone this repository
 git clone https://github.com/rdjondo/cplings
 
@@ -71,7 +70,8 @@ The task is simple. Most exercises contain an error that keeps them from compili
 ### In Linux
 To run all exercises in predetermined order:
 
-```bash
+(In the `build` directory)
+```sh
 make
 ```
 
@@ -79,7 +79,7 @@ This will try to verify the completion of every exercise in a predetermined orde
 
 OR, to run a specific exercise, tell make with exercise to run. For example:
 
-```bash
+```sh
 make variable2
 ```
 
