@@ -4,7 +4,7 @@
 #include <vector>
 
 // ownership1.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
+// Make me compile!
 
 // We sometimes encourage you to keep trying things on shape given exercise,
 // even after you already figured it out.

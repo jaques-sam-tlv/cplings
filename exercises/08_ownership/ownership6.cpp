@@ -4,13 +4,15 @@
 #include <vector>
 
 // ownership6.cpp
-// Make me compile! Go to the folder hint if you want a hint :)
-
-// We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out.
-
-// Step 1: Make me compile. Share ownership of data from fill_vec1 to fill_vec2.
-// The challenge is to create an additional "artificial" owner of the data.
+// Goal: share ownership of a single vector between several owners with
+// std::shared_ptr, and watch how the reference count (use_count) changes as
+// owners appear and disappear.
+//
+// fill_vec1 receives a shared_ptr to the vector and then hands it to fill_vec2.
+// The test checks the number of owners fill_vec2 sees. To reach the expected
+// count you must create one extra, "artificial" owner inside fill_vec1.
+//
+// Replace the ...? below with the missing line.
 
 
 // Display value for a vector
@@ -43,7 +45,7 @@ std::ostream& operator<< (std::ostream& out, const MyInteger& integer) {
     return out << integer.number;
 }
 
-const int fill_vec2(std::shared_ptr<std::vector<MyInteger>> vec_ptr) {
+int fill_vec2(std::shared_ptr<std::vector<MyInteger>> vec_ptr) {
     std::cout << "vec has length " << vec_ptr->size() << ", number of owners:" <<
         vec_ptr.use_count() << " in fill_vec2\n";
     const int total_past_owners = vec_ptr.use_count();
@@ -51,12 +53,16 @@ const int fill_vec2(std::shared_ptr<std::vector<MyInteger>> vec_ptr) {
     return total_past_owners;
 }
 
-const int fill_vec1(std::shared_ptr<std::vector<MyInteger>> vec_ptr) {
-    // Create an additional owner here : construct another shared data pointer
-    std::shared_ptr<std::vector<MyInteger>> vec(vec_ptr);  // This creates a second shared_ptr to the same vector, incrementing use_count to 3
-    vec->push_back(22); // Here push_back is used inducing an unnecessary copy and deletion
+int fill_vec1(std::shared_ptr<std::vector<MyInteger>> vec_ptr) {
+    // Fix: create an additional ("artificial") owner of the vector here and
+    //      name it `vec`. A second std::shared_ptr can share ownership of the
+    //      same object; constructing it raises the reference count, and it is
+    //      released again when fill_vec1 returns.
+    ...?
+
+    vec->push_back(22);
     std::cout << "vec has length " << vec_ptr->size() << ", number of owners should be 3:" <<
-        vec_ptr.use_count() << " in fill_vec1 (notice useless copy and deletion for 22)\n";
+        vec_ptr.use_count() << " in fill_vec1\n";
 
     std::cout << "fill_vec2 is starting" << std::endl;
     const int total_past_owners = fill_vec2(vec_ptr);
@@ -67,7 +73,7 @@ const int fill_vec1(std::shared_ptr<std::vector<MyInteger>> vec_ptr) {
     return total_past_owners;
 }
 
-const int test_ownership6() {
+int test_ownership6() {
     const int desired_vector_space = 3;
     auto vec_ptr  = std::make_shared<std::vector<MyInteger>>();
     vec_ptr->reserve(desired_vector_space);

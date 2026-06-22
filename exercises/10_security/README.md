@@ -32,9 +32,9 @@ https://cwe.mitre.org/data/definitions/659.html
 
 
 Data Processing:
-* CWE-119 Improper Restriction of Operations within the Bounds of a Memory Buffer and its subcategories (buffer overflow)
-* CWE-125 Out-of-bounds Read
-* CWE-787 Out-of-bounds Write
+* CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer and its subcategories (buffer overflow)
+* CWE-125: Out-of-bounds Read
+* CWE-787: Out-of-bounds Write
 * CWE-129: Improper Validation of Array Index
 * CWE-128: Wrap-around Error
 * CWE-789: Memory Allocation with Excessive Size Value
@@ -47,13 +47,13 @@ Resource management:
 * CWE-362	Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
 
 Insecure inputs, data or deserialization:
-* CWE-20 Improper Input Validation
+* CWE-20:  Improper Input Validation
 * CWE-170: Improper Null Termination
-* CWE-502:  Deserialization of Untrusted Data
-* CWE-704	Incorrect Type Conversion or Cast
+* CWE-502: Deserialization of Untrusted Data
+* CWE-704: Incorrect Type Conversion or Cast
 
 Numeric-related:
-* CWE-190 Integer Overflow or Wraparound
+* CWE-190: Integer Overflow or Wraparound
 * CWE-194: Unexpected Sign Extension
 * CWE-192: Integer Coercion Error
 
