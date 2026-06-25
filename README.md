@@ -28,21 +28,24 @@ When, installing it make sure to select Desktop development with C++ and then, i
 
 ## Linux
 
-Under Ubuntu, just run:
+For Ubuntu:
 
-```bash
-# Install the GNU C++ compiler, git and vscode
-sudo apt install g++ cmake make gdb git
-sudo snap install vscode
+```sh
+sudo apt install g++ cmake make gdb git libasan8
 ```
 
-```bash
-# Clone this repository
+For Fedora
+
+```sh
+sudo dnf install gcc-c++ cmake make gdb git libasan
+```
+
+Clone this repository and build:
+```sh
 git clone https://github.com/rdjondo/cplings
 cd cplings
-mkdir build && cd build
-cmake ..
-make
+cmake . -B build
+cmake --build build [--parallel 8]
 ```
 
 You should expect the build to fail : your task is to fix each exercise for the build to succed.
@@ -68,7 +71,8 @@ The task is simple. Most exercises contain an error that keeps them from compili
 ### In Linux
 To run all exercises in predetermined order:
 
-```bash
+(In the `build` directory)
+```sh
 make
 ```
 
