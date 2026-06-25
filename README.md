@@ -11,7 +11,7 @@ Alternatively, for a first-time C++ learner, there are several other resources:
 - [The C++ FAQ](https://isocpp.org/wiki/faq)
 - [C++ Core guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
 
-*cplings got its inspiration from the magnificient [rustlings repository](https://github.com/rust-lang/rustlings), which aims at familiarizing newcomers to the Rust language. This repository is a sort of a fork of it but for the C++ language*
+*cplings got its inspiration from the magnificent [rustlings repository](https://github.com/rust-lang/rustlings), which aims at familiarizing newcomers to the Rust language. This repository is a sort of a fork of it but for the C++ language*
 
 
 ## Getting Started
@@ -23,7 +23,7 @@ Install and Usage Demo video:
 [![Install and Usage Demo](https://img.youtube.com/vi/18vNfxwU5n4/0.jpg)](https://youtu.be/18vNfxwU5n4)
 
 ## Windows
-Visit https://visualstudio.microsoft.com/vs/community/ and download Visual Studio Community. 
+Visit https://visualstudio.microsoft.com/vs/community/ and download Visual Studio Community.
 When, installing it make sure to select Desktop development with C++ and then, in the "Installation details" menu enable support for the C++ CMake Tools for Windows
 
 ## Linux
@@ -45,18 +45,18 @@ cmake ..
 make
 ```
 
-You should expect the build to fail : your task is to fix each exercise for the build to succed.
+You should expect the build to fail. Your task is to fix each exercise for the build to succeed.
 
 ## Windows
-Install Visual Studio Community Edition and Git.
+Install Visual Studio Community Edition or Code and Git.
 
-```cmd
+```sh
 # Clone this repository
 git clone https://github.com/rdjondo/cplings
 
 ```
 
-Open the folder cplings in Visual Studio. Add support for CMake and run a build. You should expect the build to fail : your task is to fix each exercise for the build to succed.
+Open the folder cplings in Visual Studio. Add support for CMake and run a build. You should expect the build to fail. Your task is to fix each exercise for the build to succeed.
 
 
 ## Doing the exercises
@@ -76,12 +76,12 @@ This will try to verify the completion of every exercise in a predetermined orde
 
 OR, to run a specific exercise, tell make with exercise to run. For example:
 
-```bash
+```sh
 make variable2
 ```
 
 ### In Windows
-Visual Studio will let you choose the specific exercise you would like to solve. 
+Visual Studio will let you choose the specific exercise you would like to solve.
 
 ## Hints
 You will find some help for specific exercises in the hints directory. Please note that this is work in progress.
